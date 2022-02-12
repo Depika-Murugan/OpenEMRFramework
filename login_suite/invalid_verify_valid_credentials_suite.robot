@@ -5,6 +5,7 @@ Library     SeleniumLibrary
 Library     OperatingSystem
 
 Resource    ../base/common_functionality.resource
+Resource    ../pages/login_page.resource
 
 Test Setup      Launch Browser
 Test Teardown   End Browser
@@ -18,9 +19,10 @@ TC3     Mark    Mark123     Greek   Invalid username or password
 
 *** Keywords ***
 Verify Invalid Credentials Template
-     [Arguments]     ${username}     ${password}     ${language}     ${expected_title}
-     Input Text    id=authUser   ${username}
-     Input Password    id=clearPass    ${password}
-     Select From List By Label    name=languageChoice     ${language}
-     Click Element    xpath=//button[@type='submit']
+     [Arguments]     ${username}     ${password}     ${language}  ${expected_title}
+     Enter Username    ${username}
+     Enter Password    ${password}
+     Select From List By Label         ${language}
+     Click Login
+     Valida
      Element Should Contain    xpath=//div[contains(text(),'Invalid')]    ${expected_title}

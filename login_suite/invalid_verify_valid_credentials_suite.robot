@@ -22,7 +22,6 @@ Verify Invalid Credentials Template
      [Arguments]     ${username}     ${password}     ${language}  ${expected_title}
      Enter Username    ${username}
      Enter Password    ${password}
-     Select From List By Label         ${language}
+     Select Lanugage Using Label    {$language}
      Click Login
-     Valida
-     Element Should Contain    xpath=//div[contains(text(),'Invalid')]    ${expected_title}
+     Validate Invalid Error Message    ${expected_error}

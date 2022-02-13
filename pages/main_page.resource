@@ -1,8 +1,10 @@
 *** Settings ***
-Documentation    this file  handles all the test case
+Documentation   This file handles all the menu for openemr application
+
+Resource    ../base/common_functionality.resource
 
 
-Resource    ../pages/login_page.resource
-Resource    ../pa
-
-
+*** Keywords ***
+Main Page Title Should be
+    [Arguments]     ${expected_title}
+    Title Should Be    ${expected_title}

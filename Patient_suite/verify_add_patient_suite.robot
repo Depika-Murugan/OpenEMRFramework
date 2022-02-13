@@ -34,6 +34,7 @@ TC1     admin   pass    English (Indian)
 
 *** Keywords ***
 Verify add patients Template
+    Enter
     [Arguments]     ${username}     ${password}     ${language}
      Input Text    id=authUser   ${username}
      Input Password    id=clearPass    ${password}
